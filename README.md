@@ -4,6 +4,11 @@ You can use this repo to build new Activerecord projects
 
 * You will need to create your own app/models directories
 
+## Additional Deliverables
+<!-- - A Student belongs to a Teacher -->
+<!-- - Student#teacher should return the teacher that student belongs to
+- Teacher#students should return a list of all the students that belong to this teacher -->
+
 ## Questions
 
 * Which method(s) does Active Record create for you?
@@ -13,3 +18,5 @@ You can use this repo to build new Activerecord projects
 * Which method(s) did you have to create yourself? Why? 
 
     I had to create the `Teacher#tenure` and the `Student.all_in_grade` methods.
+
+
