@@ -46,6 +46,9 @@ I edited and refactored the seed file to reflect change in associations. Otherwi
 
 Additionally, I created assocation methods `Teacher#students` and `Student#teachers` because particular `Student` instances should know the `Teacher` instances that they're assocaited within `grade_levels` and vice versa with `Teachers` instance and `Student` instances. I also created `GradeLevel.students` and `GradeLevel.teachers` for any future class method deliverables that might require having a list of all teacher instances and student instances.
 
+### Additional Relationship
+
+ Write down deliverables for that relationship (what attributes? What class methods? What instance methods?) and then send them to me.
 
 ## Questions
 

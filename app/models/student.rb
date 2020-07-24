@@ -12,14 +12,10 @@ class Student < ActiveRecord::Base
         self.all.select { |student| student.grade_level == grade }
     end
 
-    def teachers
-        GradeLevel.students.select do |x|
-            binding.pry        
+    def teacher
+        self.grade_levels.collect do |grade_level|
+            grade_level.teacher if grade_level.student == self
         end
-    
-        # self.grade_levels.collect do |grade_level|
-        #     grade_level.teacher if grade_level.student == self
-        # end
     end
 
 
