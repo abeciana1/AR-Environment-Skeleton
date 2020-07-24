@@ -1,6 +1,6 @@
 class Teacher < ActiveRecord::Base
-    has_many :grade_levels
-    has_many :students, through: :grade_levels
+    has_many :schools
+    has_many :students, through: :schools
 
     def tenure
         if self.years_of_experience > 5
@@ -11,8 +11,8 @@ class Teacher < ActiveRecord::Base
     end
 
     def students
-        self.grade_levels.collect do |grade_level|
-            grade_level.student if grade_level.teacher == self
+        self.schools.collect do |school|
+            school.student if school.teacher == self
         end
     end
     

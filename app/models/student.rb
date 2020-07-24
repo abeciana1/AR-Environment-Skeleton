@@ -1,8 +1,9 @@
 require "pry"
 
 class Student < ActiveRecord::Base
-    has_many :grade_levels
-    has_many :teachers, through: :grade_levels
+    has_many :schools
+    has_many :teachers, through: :schools
+    has_many :books
 
     def full_name
         "#{self.first_name} #{self.last_name}"
@@ -12,7 +13,7 @@ class Student < ActiveRecord::Base
         self.all.select { |student| student.grade == grade }
     end
 
-    def teacher
+    def teachers
         self.schools.collect do |school|
             school.teacher if school.student == self
         end
