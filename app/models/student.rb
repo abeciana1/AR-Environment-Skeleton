@@ -1,5 +1,8 @@
+require "pry"
+
 class Student < ActiveRecord::Base
-    belongs_to :teacher
+    has_many :grade_levels
+    has_many :teachers, through: :grade_levels
 
     def full_name
         "#{self.first_name} #{self.last_name}"
@@ -9,5 +12,15 @@ class Student < ActiveRecord::Base
         self.all.select { |student| student.grade_level == grade }
     end
 
+    def teachers
+        GradeLevel.students.select do |x|
+            binding.pry        
+        end
     
+        # self.grade_levels.collect do |grade_level|
+        #     grade_level.teacher if grade_level.student == self
+        # end
+    end
+
+
 end
