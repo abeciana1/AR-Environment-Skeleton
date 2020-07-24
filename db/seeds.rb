@@ -2,6 +2,7 @@ require 'pry'
 Student.destroy_all
 Teacher.destroy_all
 GradeLevel.destroy_all
+Book.destroy_all
 
 
 #Teacher

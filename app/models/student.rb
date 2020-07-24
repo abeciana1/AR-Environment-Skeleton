@@ -9,12 +9,12 @@ class Student < ActiveRecord::Base
     end
 
     def self.all_in_grade(grade)
-        self.all.select { |student| student.grade_level == grade }
+        self.all.select { |student| student.grade == grade }
     end
 
     def teacher
-        self.grade_levels.collect do |grade_level|
-            grade_level.teacher if grade_level.student == self
+        self.schools.collect do |school|
+            school.teacher if school.student == self
         end
     end
 
